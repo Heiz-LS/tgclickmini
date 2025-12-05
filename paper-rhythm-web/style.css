@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Shadows Into Light", "Comic Sans MS", system-ui, sans-serif;
+  background: #fdfaf2;
+  color: #222;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Лист бумаги */
+#game-root {
+  margin: 8px;
+  width: 100%;
+  max-width: 500px;
+  height: calc(100vh - 16px);
+  background: repeating-linear-gradient(
+    #fdfaf2,
+    #fdfaf2 24px,
+    #f3e7d5 25px
+  );
+  border-radius: 16px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Верхний HUD */
+.hud-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 0;
+  font-size: 14px;
+}
+
+.hp-bar {
+  width: 65%;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid #333;
+  background: #fff;
+  overflow: hidden;
+}
+
+.hp-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #4caf50, #ffc107);
+  transition: width 0.15s linear;
+}
+
+.hud-top-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#accuracy,
+#rank {
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Игроваая область */
+.game-area {
+  flex: 1;
+  margin: 4px 0;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1px dashed #555;
+  background:
+    radial-gradient(circle at 10px 10px, rgba(0, 0, 0, 0.08) 1px, transparent 0)
+    0 0 / 20px 20px,
+    transparent;
+  touch-action: none;
+}
+
+/* Нижний HUD */
+.hud-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+#combo,
+#score {
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Панель управления */
+.controls {
+  border-radius: 12px;
+  border: 1px solid #333;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.controls-row label {
+  margin-right: 6px;
+}
+
+.controls select {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 2px 4px;
+  background: #fff;
+  font-family: inherit;
+}
+
+#start-btn {
+  width: 100%;
+  margin-top: 2px;
+  padding: 4px 0;
+  border-radius: 999px;
+  border: 2px solid #333;
+  background: #ffe082;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+#start-btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
